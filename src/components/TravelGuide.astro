@@ -1,0 +1,25 @@
+﻿---
+interface Props { pdfUrl?: string; }
+const { pdfUrl } = Astro.props;
+const defaultMessage = 'Olá, Transfer Vip Gramado! Baixei o guia Atracoes-Serra-Gaucha-Stander-Turismo- 2026 e gostaria de solicitar a senha de acesso ao PDF, por favor.';
+const passwordUrl = `https://wa.me/5551920046453?text=${encodeURIComponent(defaultMessage)}`;
+---
+<section class="travel-guide" aria-labelledby="guide-heading">
+ <div class="guide-panel">
+  <img class="guide-background" src="/images/olivas/olivas_card.jpg" alt="" aria-hidden="true" loading="lazy" width="2500" height="1160" />
+  <div class="guide-art" aria-hidden="true"><svg viewBox="0 0 80 96"><path d="M14 4h34l18 18v66a4 4 0 0 1-4 4H14a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4Z"/><path d="M48 4v18h18M23 43h30M23 54h30M23 65h20"/></svg><span>GRAMADO<br />& CANELA</span></div>
+  <div class="guide-copy"><p class="guide-eyebrow">Sua viagem começa com boas ideias</p><h2 id="guide-heading">Gramado e Canela<br />na palma da sua mão</h2><p>Um guia em PDF com as principais atrações para você planejar os melhores momentos da sua viagem.</p><div class="guide-actions">{pdfUrl && <a class="guide-trigger" href={pdfUrl} download="Atracoes-Serra-Gaucha-Stander-Turismo- 2026.pdf">Baixar guia em PDF <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 16v5h14v-5"/></svg></a>}<a class="guide-trigger guide-password" href={passwordUrl} target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a9 9 0 0 1-13.6 7.7L3 21l1.8-4.5A9 9 0 1 1 21 11.5M8 7c0 5 4 9 9 9l1-3-3-1-1 1c-2-1-3-2-4-4l1-1-1-3z"/></svg>Solicitar senha no WhatsApp</a></div><small>Solicite a senha de acesso pelo WhatsApp.</small></div>
+ </div>
+</section>
+<style>
+ .travel-guide{padding:35px 0 48px;background:#FFFCF6}
+ .guide-panel{position:relative;isolation:isolate;overflow:hidden;width:min(1180px,calc(100% - 96px));margin:auto;display:flex;align-items:center;justify-content:space-between;gap:50px;min-height:390px;padding:48px 55px;background:#004830;border-radius:24px;color:#fff;box-shadow:0 18px 45px #00483018}.guide-background{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:center 55%}.guide-panel::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,35,24,.97) 0%,rgba(6,35,24,.86) 40%,rgba(6,35,24,.45) 70%,rgba(6,35,24,.16) 100%)}
+ .guide-art{position:relative;order:2;flex:0 0 175px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:17px;min-height:225px;border:1px solid #D39A3677;background:#002D1Ea6;backdrop-filter:blur(8px);box-shadow:0 16px 35px #0003;border-radius:18px;transform:rotate(5deg)}
+ .guide-art svg{width:65px;height:78px;fill:none;stroke:#EABD68;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.guide-art span{font:600 17px Georgia,serif;text-align:center;letter-spacing:2px;color:#EABD68}
+ .guide-copy{order:1;max-width:550px}.guide-eyebrow{text-transform:uppercase;font:600 11px Arial,sans-serif;letter-spacing:1.4px;color:#EABD68;margin:0 0 12px}.guide-copy h2{font:500 36px/1.1 Georgia,serif!important;color:#fff!important;margin:0 0 15px!important}.guide-copy>p:not(.guide-eyebrow){font:15px/1.6 Arial,sans-serif;margin:0;max-width:540px;color:#e4eae5}
+ .guide-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.guide-trigger{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:47px;margin-top:0;padding:12px 25px;border:0;border-radius:999px;background:#D39A36;color:#002D1E;font:600 14px Arial,sans-serif;cursor:pointer}.guide-trigger:hover{background:#EABD68}.guide-trigger svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}.guide-copy small{display:block;margin-top:11px;font:12px Arial,sans-serif;color:#cad9cf}
+ .guide-trigger:focus-visible{outline:3px solid #D39A36;outline-offset:4px}
+ .guide-trigger.guide-password{background:#004830cc;border:1px solid #EABD6888;color:#fff}.guide-trigger.guide-password:hover{background:#0A593B}.guide-actions a{text-decoration:none}.guide-copy .guide-actions .guide-trigger{color:#002D1E}.guide-copy .guide-actions .guide-password{color:#fff}
+ @media(max-width:800px){.guide-panel{width:calc(100% - 40px);gap:25px;padding:35px 30px}.guide-art{flex-basis:140px;min-height:190px}.guide-copy h2{font-size:30px!important}}
+ @media(max-width:540px){.travel-guide{padding:25px 0 35px}.guide-panel{width:calc(100% - 32px);padding:155px 23px 30px;gap:20px;flex-direction:column;align-items:flex-start;min-height:470px}.guide-panel::before{background:linear-gradient(180deg,rgba(6,35,24,.12) 0%,rgba(6,35,24,.55) 25%,rgba(6,35,24,.94) 48%,rgba(6,35,24,.98) 100%)}.guide-background{object-position:62% center}.guide-art{display:none}.guide-copy h2{font-size:30px!important}.guide-copy>p:not(.guide-eyebrow){font-size:14px}.guide-trigger{width:100%;padding-inline:15px}.guide-copy small{text-align:center}}
+</style>
