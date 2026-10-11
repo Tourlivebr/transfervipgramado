@@ -259,27 +259,10 @@ html:has(.stander-home){scroll-behavior:auto}
  .catalog-controls{display:none}
 }
 
-.hero-video-frame{position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none;container-type:size}
-.hero-video-frame iframe{position:absolute;left:50%;top:50%;width:max(100cqw,177.78cqh);height:max(100cqh,56.25cqw);transform:translate(-50%,-50%);border:0}
-.hero-audio-toggle{position:absolute;right:20px;bottom:24px;z-index:2;display:grid;place-items:center;width:40px;height:40px;border:1px solid #ffffff66;border-radius:50%;background:#002D1E99;color:#fff}
-.hero-audio-toggle[hidden]{display:none}
-.hero-audio-toggle:disabled{opacity:.5;cursor:wait}
-.hero-audio-toggle .audio-on{display:none}
-.hero-audio-toggle[aria-pressed="true"] .audio-off{display:none}
-.hero-audio-toggle[aria-pressed="true"] .audio-on{display:block}
-.hero-natal-cta{margin-top:24px}
-@media(max-width:540px){.hero-audio-toggle{right:16px;bottom:48px}.hero-natal-cta{font-size:13px;margin-top:20px}}
-
-.stander-home h1.hero-natal-title{max-width:700px;margin:0;font-family:Georgia,'Times New Roman',serif;line-height:1.05;letter-spacing:-1px;font-weight:400;color:#fff8eb;text-shadow:0 3px 18px #0009}
-.hero-natal-heading{display:block;position:relative;width:fit-content}
-.hero-festive-stars{display:flex;align-items:center;gap:18px;margin-bottom:16px;font-size:24px;line-height:1;color:#F4D69C;text-shadow:0 0 18px #D39A3670}
-.hero-festive-stars>span{font-size:15px}
-.hero-natal-lead{display:block;font-size:clamp(29px,3.2vw,44px);font-style:italic;letter-spacing:-.6px;margin-bottom:4px}
-.hero-natal-name{position:relative;display:block;font-size:clamp(66px,7vw,96px);font-weight:700;letter-spacing:-3px;color:#F4D69C;text-shadow:0 3px 18px #0008,0 0 32px #D39A3630}
-.hero-natal-spark{position:absolute;right:-38px;top:0;font-size:32px;font-weight:400;color:#fff3d2;letter-spacing:0}
-.hero-natal-brand{display:block;margin-top:-6px;font-family:Georgia,'Times New Roman',serif;font-size:clamp(25px,2.8vw,38px);font-style:italic;line-height:1.25;font-weight:400;letter-spacing:-.6px;color:#fff8eb}
-.hero-natal-brand strong{font-weight:400}
-@media(max-width:540px){.stander-home h1.hero-natal-title{max-width:100%;letter-spacing:-1px}.hero-festive-stars{font-size:21px;gap:14px;margin-bottom:13px}.hero-natal-lead{font-size:29px}.hero-natal-name{font-size:clamp(58px,15vw,76px);letter-spacing:-2px}.hero-natal-spark{right:-25px;font-size:23px}.hero-natal-brand{margin-top:-4px;font-size:clamp(23px,6.5vw,29px)}}
+.hero-tours .hero-landscape{object-position:center 55%}
+.hero-tours-cta{margin-top:24px}
+.hero-tours:after{background:linear-gradient(90deg,#002D1Eeb 0%,#002D1Eb0 35%,#002D1E35 70%,#002D1E10 100%)}
+@media(max-width:540px){.hero-tours .hero-landscape{object-position:55% center}.hero-tours:after{background:linear-gradient(0deg,#002D1Eee 0%,#002D1Ea0 55%,#002D1E30 100%)}.hero-tours-cta{font-size:13px;margin-top:20px}}
 
 .tour-summary.ticket-card-description{-webkit-line-clamp:2;line-clamp:2}
 
