@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 
 // Criar URLs de forma segura
-const baseUrl = Astro.site?.toString() || 'https://Standerturismo.vercel.app/';
+const baseUrl = Astro.site?.toString() || 'https://transfervipgramado.vercel.app/';
 const canonicalURL = canonical || new URL(Astro.url.pathname, baseUrl).toString();
 const socialImage = new URL(image, baseUrl).toString();
 
@@ -30,10 +30,12 @@ const isPng = image.toLowerCase().endsWith('.png');
 const ogType = isJpg ? 'image/jpeg' : isPng ? 'image/png' : 'image/jpeg';
 // Dimensões conhecidas dos nossos assets (WhatsApp prefere >= 300px, recomendado 1200x630)
 const ogWidth =
+  image.includes('momento-05.jpeg') ? 1600 :
   image.includes('og-default-1200x630') ? 1200 :
   image.includes('link_passeios1') ? 1600 :
   image.includes('trasnfervipp') ? 650 : image.includes('logo') ? 512 : 1200;
 const ogHeight =
+  image.includes('momento-05.jpeg') ? 1200 :
   image.includes('og-default-1200x630') ? 630 :
   image.includes('link_passeios1') ? 900 :
   image.includes('trasnfervipp') ? 640 : image.includes('logo') ? 512 : 630;
@@ -76,16 +78,12 @@ const ogHeight =
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Standerturismo" />
-    <meta name="twitter:creator" content="@Standerturismo" />
     <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
     <meta name="twitter:image:alt" content={title} />
     
-    <!-- WhatsApp específico: pré-carrega og:image no body (força cache) -->
-    <link rel="preload" as="image" href={socialImage} imagesrcset="" imagesizes="" fetchpriority="high" />
     <link rel="image_src" href={socialImage} />
     
     <!-- Schema.org JSON-LD -->
@@ -97,6 +95,7 @@ const ogHeight =
       "description": description,
       "url": canonicalURL,
       "image": socialImage,
+      "logo": new URL("/images/trasnfervipp.png", baseUrl).toString(),
       "telephone": "+5551920046453",
       "address": {
         "@type": "PostalAddress",

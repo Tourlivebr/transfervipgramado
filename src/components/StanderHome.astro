@@ -40,7 +40,7 @@ const catalogCards = ticketsCatalog ? ingressos.map(ticket => ({
  detail: '', href: ticket.linkOficial, summary: ticket.subtitulo,
 })) : tours.map(tour => ({...tour, summary: tourSummaries[tour.href.split('/').pop()!]}));
 ---
-<BaseLayout title={ticketsCatalog ? "Ingressos e Atrações | Transfer Vip Gramado" : catalog ? "Passeios | Transfer Vip Gramado" : "Transfer Vip Gramado | Experiências inesquecíveis na Serra Gaúcha"} description="Viva o melhor de Gramado, Canela e da Serra Gaúcha. Passeios, ingressos e roteiros personalizados com a Transfer Vip Gramado." image="/images/trasnfervipp.png">
+<BaseLayout title={ticketsCatalog ? "Ingressos e Atrações | Transfer Vip Gramado" : catalog ? "Passeios | Transfer Vip Gramado" : "Transfer VIP Gramado | Passeios e Transfers na Serra Gaúcha"} description="Conheça a Transfer VIP Gramado: passeios privativos, transfers de aeroporto, ingressos e roteiros personalizados em Gramado, Canela e na Serra Gaúcha. Planeje sua viagem com atendimento pelo WhatsApp." image="/images/trasnfervipp.png">
  <div class="stander-home">
   <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></symbol>
